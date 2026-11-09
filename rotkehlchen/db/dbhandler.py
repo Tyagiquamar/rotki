@@ -3590,7 +3590,7 @@ class DBHandler:
                     from_ts,
                     from_ts,
                     f'{NFT_DIRECTIVE}*',
-                    '*/erc721:*',
+                    'eip155:*/erc721:*',
                     'solana/nft:*',
                 )
 
