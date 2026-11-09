@@ -1416,7 +1416,8 @@ def test_get_netvalue_without_nfts_excludes_erc721_and_solana(
     # With include_nfts=True, all assets are included in net value
     assert data.db.get_netvalue_data(timestamp, include_nfts=True) == ([timestamp], ['5700'])
     # With include_nfts=False:
-    # - legacy NFT (1000), Ethereum ERC721 (1500), Polygon ERC721 (500), and Solana NFT (1000) are excluded
+    # - legacy NFT (1000), Ethereum ERC721 (1500), Polygon ERC721 (500),
+    #   and Solana NFT (1000) are excluded
     # - A_BTC (1000), erc20_token (500), and unrelated_non_evm_asset (200) are kept
     # Net value = 5700 - (1000 + 1500 + 500 + 1000) = 1700 (1000 + 500 + 200)
     assert data.db.get_netvalue_data(timestamp, include_nfts=False) == ([timestamp], ['1700'])
